@@ -170,16 +170,16 @@ objects:
             timeoutSeconds: 1
           securityContext:
             privileged: false
-    triggers:
-    - type: ConfigChange
-    - imageChangeParams:
+  triggers:
+  - type: ConfigChange
+  - type: ImageChange
+    imageChangeParams:
         automatic: true
         containerNames:
-        - thorntail
+            - thorntail
         from:
-          kind: ImageStreamTag
-          name: 'thorntail-health-check${SUFFIX_NAME}:${RELEASE_VERSION}'
-      type: ImageChange
+            kind: ImageStreamTag
+            name: 'thorntail-health-check${SUFFIX_NAME}:${RELEASE_VERSION}'
 - apiVersion: v1
   kind: Route
   metadata:
