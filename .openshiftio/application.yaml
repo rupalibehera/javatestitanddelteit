@@ -136,7 +136,6 @@ objects:
             valueFrom:
               fieldRef:
                 fieldPath: metadata.namespace
-          image: ""
           livenessProbe:
             failureThreshold: 2
             httpGet:
